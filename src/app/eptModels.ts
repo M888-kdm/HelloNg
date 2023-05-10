@@ -5,7 +5,7 @@ export interface Etudiant {
     poids:number,
     adresse:string,
     inscrit:boolean,
-    formation:Formation
+    formation?:Formation
 }
 
 export interface Formation {
