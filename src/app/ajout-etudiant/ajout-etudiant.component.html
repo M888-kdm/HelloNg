@@ -1,1 +1,31 @@
-<p>ajout-etudiant works!</p>
+<div class="d-flex flex-column w-50 mx-auto my-5">
+    <div class="h1">Ajouter Un Etudiant</div>
+    <form #formEtudiant="ngForm" (ngSubmit)="ajoutEtudiant()">
+        <div class="mb-3">
+            <label for="numero" class="form-label">Numéro Carte</label>
+            <input type="text" class="form-control" name="numero" [(ngModel)]="etudiant.numero" id="numero" nameplaceholder="Votre numero de carte...">
+        </div>
+        <div class="mb-3">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input type="text" class="form-control" name="prenom" [(ngModel)]="etudiant.prenom" id="prenom" placeholder="Votre prénom...">
+        </div>
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text" class="form-control" name="nom" [(ngModel)]="etudiant.nom" id="nom" placeholder="Votre nom...">
+        </div>
+        <div class="mb-3">
+            <label for="mail" class="form-label">Email</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="etudiant.email" id="mail" placeholder="Votre mail...">
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<div *ngIf="listEtudiants.length>0">
+    <h1>Liste des Etudiants</h1>
+    <div *ngFor="let e of listEtudiants">
+        <div>{{e.numero}}</div>
+        <div>{{e.prenom}}</div>
+        <div>{{e.nom}}</div>
+        <div>{{e.email}}</div>
+    </div>
+</div>

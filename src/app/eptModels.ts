@@ -1,10 +1,12 @@
 export interface Etudiant {
-    numero:string,
-    prenom:string,
-    nom:string,
-    poids:number,
-    adresse:string,
-    inscrit:boolean,
+    numero?:string,
+    prenom?:string,
+    nom?:string,
+    age?: number
+    poids?:number,
+    email?:string,
+    adresse?:string,
+    inscrit?:boolean,
     formation?:Formation
 }
 
