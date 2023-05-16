@@ -3,8 +3,10 @@
     <form #formEtudiant="ngForm" (ngSubmit)="ajoutEtudiant()">
         <div class="mb-3">
             <label for="numero" class="form-label">Numéro Carte</label>
-            <input type="text" class="form-control" name="numero" [(ngModel)]="etudiant.numero" id="numero" nameplaceholder="Votre numero de carte...">
+            <input type="text" class="form-control" #numEtuInput #numEtu="ngModel" name="numero" [(ngModel)]="etudiant.numero" id="numero" nameplaceholder="Votre numero de carte...">
         </div>
+        <div>classes : {{numEtuInput.className}}</div>
+        <div>classes : {{numEtu.dirty}}</div>
         <div class="mb-3">
             <label for="prenom" class="form-label">Prénom</label>
             <input type="text" class="form-control" name="prenom" [(ngModel)]="etudiant.prenom" id="prenom" placeholder="Votre prénom...">

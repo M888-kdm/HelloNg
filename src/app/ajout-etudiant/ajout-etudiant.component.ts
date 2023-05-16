@@ -61,6 +61,7 @@ export class AjoutEtudiantComponent implements OnInit{
       "text-success": !e.inscrit,
       "bg-info": !e.inscrit
     }
+    return res;
   }
 
 }
