@@ -17,15 +17,24 @@
             <label for="mail" class="form-label">Email</label>
             <input type="text" class="form-control" name="email" [(ngModel)]="etudiant.email" id="mail" placeholder="Votre mail...">
         </div>
+        <div class="mb-3">
+            <label for="inscrit" class="form-label">Êtes vous inscrit ?</label>
+            <input type="checkbox" class="form-check-input" name="inscrit" [(ngModel)]="etudiant.inscrit" id="inscrit">
+        </div>
         <button class="btn btn-primary">Submit</button>
     </form>
 </div>
-<div *ngIf="listEtudiants.length>0">
+<div *ngIf="listEtudiants.length > 0">
     <h1>Liste des Etudiants</h1>
-    <div *ngFor="let e of listEtudiants">
-        <div>{{e.numero}}</div>
-        <div>{{e.prenom}}</div>
-        <div>{{e.nom}}</div>
-        <div>{{e.email}}</div>
+    <div *ngFor="let e of listEtudiants; index as i">
+        <div [ngStyle]="genTitleStyle(e)"  style="color: red;">
+            {{e.numero}}
+        </div>
+        <div [class.bg-secondary]="e.inscrit">
+            <div>{{e.numero}}</div>
+            <div>{{e.prenom}}</div>
+            <div>{{e.nom}}</div>
+            <div>{{e.email}}</div>
+        </div>
     </div>
 </div>

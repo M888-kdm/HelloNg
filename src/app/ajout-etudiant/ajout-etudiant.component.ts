@@ -43,4 +43,24 @@ export class AjoutEtudiantComponent implements OnInit{
     this.initForm();
   }
 
+  genTitleStyle(e:Etudiant):any{
+    let res:any = {
+      "text-decoration":"underline",
+      "font-size":"30px"
+    }
+    if(e.inscrit){
+      res.color = 'green';
+    }
+    return res;
+  }
+
+  genClass(e:Etudiant):any{
+    let res = {
+      "text-danger": !e.inscrit,
+      "bg-warning": !e.inscrit,
+      "text-success": !e.inscrit,
+      "bg-info": !e.inscrit
+    }
+  }
+
 }
